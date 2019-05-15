@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Login</title>
+  <title>Register</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 <!--     <link rel="stylesheet" href="/css/coba.css"> 
  -->
@@ -214,24 +214,34 @@ input[type='submit'] {
 </style>
 </head>
 
-
 <body class="align">
   <div class="grid">
-    <form action="/login/auth" method="post" class="form login">
+    <form action="register/add" method="post" class="form login">
       <header class="login__header">
-        <h2><span class="fa fa-sign-in" ></span> Pintu Utama (login)</h2>
+        <h2><span class="fa fa-sign-in" ></span> Pintu Utama (register)</h2>
       </header>
       <div class="login__body">
         <div class="form__field">
-          <input type="text" name="username" placeholder="Username" required>
+          <input type="text" name="nrp" placeholder="NRP" required>
         </div>
         <div class="form__field">
-          <input type="password" name="password" placeholder="Password" required>
+          <input type="text" name="nama" placeholder="Nama" required>     
+        </div>
+        <div class="form__field">
+            <!-- <label class="m-2">GERBANG</label> -->
+            <select id="status" class="form-control" name="role" required>
+                <option value="" disabled selected>Silahkan memilih ROLE</option>
+                <option value="Mahasiswa">Mahasiswa</option>
+                <option value="Dosen">Dosen</option>
+            </select>
+        </div>        
+        <div class="form__field">
+          <input type="password" name="password" placeholder="Password" required>        
         </div>
       </div>
       <footer class="login__footer">
         <input type="submit" value="Login">
-        <p><span class="icon icon--info">?</span><a href="#">Forgot Password</a></p>
+        <p><span class="icon icon--info">?</span><a href="#">Do you have account?</a></p>
       </footer>
     </form>
   </div>

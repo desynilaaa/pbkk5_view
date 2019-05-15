@@ -3,7 +3,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(request, response) {
-  response.render('gate/register.njk');
+  response.render('register.tl');
 });
 
 router.post('/add',function(request,response) {

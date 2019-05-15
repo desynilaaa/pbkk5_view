@@ -3,7 +3,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(request, response) {
-  response.render('gate/gatesystem.njk');
+  response.render('gatesystem.tl');
 });
 
 module.exports = router;
