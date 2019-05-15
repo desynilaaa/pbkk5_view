@@ -1,9 +1,11 @@
 var express = require('express');
+var app      = express();
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var nunjucks  = require('nunjucks');
+const tl = require('express-tl');
 
 var root = express();
 
@@ -27,6 +29,10 @@ var env = nunjucks.configure(['views/'], { // set folders with templates
     express: root
 });
 
+app.engine('tl',tl);
+app.use(express.static(__dirname + '/views'));
+app.set('view engine', 'tl'); 
+const fs = require('fs');
 // env.addFilter('myFilter', function(obj, arg1, arg2) {
 //     console.log('myFilter', obj, arg1, arg2);
 //     // Do smth with obj

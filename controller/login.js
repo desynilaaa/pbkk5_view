@@ -3,7 +3,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(request, response) {
-  response.render('gate/login.njk');
+  response.render('login.tl');
 });
 
 router.post('/auth', function(request, response) {
