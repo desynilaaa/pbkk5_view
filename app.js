@@ -1,5 +1,5 @@
 var express = require('express');
-var app      = express();
+// var app      = express();
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
@@ -18,20 +18,21 @@ root.use(session({
 
 root.use(bodyParser.urlencoded({extended : true}));
 root.use(bodyParser.json());
-
+const methodOverride = require('method-override');
+root.use(methodOverride('_method'));
 // root.use(express.static(__dirname + '/assets'));
 
 
 //Apply nunjucks and add custom filter and function (for example).
-root.set('view engine', 'njk');
-var env = nunjucks.configure(['views/'], { // set folders with templates
-    autoescape: true,
-    express: root
-});
-
-app.engine('tl',tl);
-app.use(express.static(__dirname + '/views'));
-app.set('view engine', 'tl'); 
+// root.set('view engine', 'njk');
+// var env = nunjucks.configure(['views/'], { // set folders with templates
+//     autoescape: true,
+//     express: root
+// });
+root.set('view engine', 'tl');
+root.engine('tl',tl);
+root.use(express.static(__dirname + '/views'));
+// root.set('view engine', 'tl'); 
 const fs = require('fs');
 // env.addFilter('myFilter', function(obj, arg1, arg2) {
 //     console.log('myFilter', obj, arg1, arg2);

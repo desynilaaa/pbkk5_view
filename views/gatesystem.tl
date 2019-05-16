@@ -260,6 +260,8 @@ input, textarea, legend {
 			<li><a href="#welcomepage"></a></li>
 			<li><a href="/login">LOGIN</a></li>
 			<li><a href="/register">SIGNUP</a></li>
+      <li><a href="/gates">GATES</a></li>
+      <li><a href="/users">USERS</a></li>
 			<li><a href="#contactpage"></a></li>
 		</ul>
 	</nav>

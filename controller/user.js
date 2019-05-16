@@ -7,7 +7,16 @@ router.get('/', function(request, response) {
 	let query = db.query(sql, (err, results,fields) => {
 		if(err) throw err;
 		// console.log(matkuls);
-		response.render('user/user.njk',{results});
+		// response.render('user/user.njk',{results});
+		// response.render('user/user.njk',{results});		             
+        var row2=[];
+        for (var i = 0, len = results.length; i < len; i++) {  //query den gelen bütün parametreleri rows sınıfına ekliyoruz .
+            row2[i] = results[i];
+            console.log(row2[i]);                        
+        }
+         response.render('users.tl',{
+            rows2 : row2
+         });
 	});
     //response.render('mahasiswa/index.njk',{username,nama});
 });
@@ -18,12 +27,20 @@ router.get('/:id', function(request, response) {
 	let sql = "SELECT * FROM user WHERE id_user=".concat(getId)
 	let query = db.query(sql, (err, results, fields) => {
 		if (err) throw err;
-		// response.redirect({results}, url)
-		response.render('user/user.njk', {results})
+		// response.redirect({results})
+		var row2=[];
+        for (var i = 0, len = results.length; i < len; i++) {  //query den gelen bütün parametreleri rows sınıfına ekliyoruz .
+            row2[i] = results[i];
+            console.log(row2[i]);                        
+        }
+         response.render('profile.tl',{
+            rows : row2
+         });
+
 	})
 })
 
-router.post('/delete/:id', function(request, response) {
+router.delete('/delete/:id', function(request, response) {
 	let deleteId = request.params.id
 	let sql = "DELETE FROM user WHERE id_user=".concat(deleteId)
 	let query = db.query(sql, (err, results, fields) => {
@@ -68,7 +85,7 @@ router.post('/add', function(request, response) {
 	        console.log("Error di insert log")
 	      }})
 
-			response.redirect('/users')
+			// response.redirect('/users')
 	  }
 	})
 })
