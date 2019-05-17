@@ -7,7 +7,9 @@ router.get('/', function(request, response) {
 	let query = db.query(sql, (err, results,fields) => {
 		if(err) throw err;
 		// console.log(matkuls);
-		response.render('gate/gate.njk',{results});
+		response.render('gate.tl',{
+			rows2 : results
+		});
 	});
     //response.render('mahasiswa/index.njk',{username,nama});
 });
@@ -19,9 +21,11 @@ router.get('/:id', function(request, response) {
 	let query = db.query(sql, (err, results, fields) => {
 		if (err) throw err;
 		// response.redirect({results}, url)
-		response.render('gate/gate.njk', {results})
-	})
-})
+		response.render('gate.tl', {
+			rows2 : results
+		});
+	});
+});
 
 router.post('/delete/:id', function(request, response) {
 	let deleteId = request.params.id
