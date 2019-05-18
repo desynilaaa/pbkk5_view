@@ -268,50 +268,51 @@ $(document).ready(function(){
 					</div>
 					<div class="col-sm-6">
 						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Gate</span></a>
-						<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
+						<!-- <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a> -->
 					</div>
                 </div>
             </div>
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-						<th>
+						<!-- <th>
 							<span class="custom-checkbox">
 								<input type="checkbox" id="selectAll">
 								<label for="selectAll"></label>
 							</span>
-						</th>
+						</th> -->
                         <th>ID Gate</th>
 						<th>Nama Gate</th>
+						<th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                 <!-- {% for gate in results %} -->
                  <!--    <tr> -->
-                 	<tr>
-						<td>
+                 
+				<!-- 		<td>
 							<span class="custom-checkbox">
 								<input type="checkbox" id="checkbox1" name="options[]" value="1">
 								<label for="checkbox1"></label>
 							</span>
-						</td>
-                        ${d.rows2.reduce((str,row2)=> str + '<td>' + row2.id_gate + '</td>' + '<td>' + row2.nama_gate + '</td>','')} 
+						</td> -->
+                        ${d.rows2.reduce((str,row2)=> str + '<tr>' + '<td>' + row2.id_gate + '</td>' + '<td>' + row2.nama_gate + '</td>' + '<td>' + '<form action="gates/delete/'+ row2.id_gate +'?_method=DELETE" method="POST"><button class="btn btn-danger" type="submit">delete</button></form>' + '</td>' + '</tr>','')}
 
-                        ${d.rows2.reduce((str,row2)=> str + '<td>' + '<form action="/gates/ '+ row2.id_gate + '?_method=UPDATE" method="GET"><button type="submit" class="btn btn-info">Edit</button></form>' + '</td>','')} 
+                      <!--   ${d.rows2.reduce((str,row2)=> str + '<td>' + '<form action="/gates/ '+ row2.id_gate + '?_method=UPDATE" method="GET"><button type="submit" class="btn btn-info">Edit</button></form>' + '</td>','')}  -->
 
-                        ${d.rows2.reduce((str,row2)=> str + '<td>' + '<form action="delete/ '+ row2.id_gate +'?_method=DELETE" method="POST"><button class="btn btn-danger" type="submit">delete</button></form>' + '</td>','')}
-<!-- {% endfor %} --></tr>
+                        
+<!-- {% endfor %} --><!-- </tr> -->
                 </tbody>
             </table>
 			<div class="clearfix">
-                <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+           <!--      <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div> -->
                 <ul class="pagination">
                     <li class="page-item disabled"><a href="#">Previous</a></li>
-                    <li class="page-item"><a href="#" class="page-link">1</a></li>
-                    <li class="page-item"><a href="#" class="page-link">2</a></li>
-                    <li class="page-item active"><a href="#" class="page-link">3</a></li>
+                    <li class="page-item  active"><a href="#" class="page-link">1</a></li>
+       <!--              <li class="page-item"><a href="#" class="page-link">2</a></li>
+                    <li class="page-item"><a href="#" class="page-link">3</a></li>
                     <li class="page-item"><a href="#" class="page-link">4</a></li>
-                    <li class="page-item"><a href="#" class="page-link">5</a></li>
+                    <li class="page-item"><a href="#" class="page-link">5</a></li> -->
                     <li class="page-item"><a href="#" class="page-link">Next</a></li>
                 </ul>
             </div>
@@ -342,7 +343,7 @@ $(document).ready(function(){
 		</div>
 	</div>
 	<!-- Edit Modal HTML -->
-	<div id="editEmployeeModal" class="modal fade">
+	<!-- <div id="editEmployeeModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<form>
@@ -375,9 +376,9 @@ $(document).ready(function(){
 				</form>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<!-- Delete Modal HTML -->
-	<div id="deleteEmployeeModal" class="modal fade">
+	<!-- <div id="deleteEmployeeModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<form action="gates/delete/{{gate.id_gate}}">
@@ -396,6 +397,6 @@ $(document).ready(function(){
 				</form>
 			</div>
 		</div>
-	</div>
+	</div> -->
 </body>
 </html>
