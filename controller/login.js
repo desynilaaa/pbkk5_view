@@ -56,7 +56,6 @@ router.post('/auth', function(request, response) {
     openTime = results[0].open
     closeTime = results[0].close
   })
-
 	if (username && password) {
 		connection.query('SELECT * FROM user WHERE nrp = ? AND password = ?', [username, password], function(error, results, fields) {
 		if (results.length > 0) {
@@ -64,21 +63,20 @@ router.post('/auth', function(request, response) {
 				request.session.username = username;
 
 	        if (current > openTime && current < closeTime){
-	          response.send(`${username} berhasil Login! Selamat datang!`);
+	          // response.send(`${username} berhasil Login! Selamat datang!`);
 	        var log={
 	    	    "id_gate_log":request.body.id_gate_log,
 	    			"nrp_log":username,
 	    			"message": "Login berhasil",
-	    			"time": current
-	    	  }
+	    			"time": current}
 					connection.query('INSERT INTO log SET ?', log, function(err, result) {
-		      	if (err) {
-		        	console.log("Error di insert log")
-		      	}})
-						response.redirect('/users');	
+			      	if (err) {
+			        	console.log("Error di insert log")
+			      	}})
+				response.redirect('/users');
         	}else {
-	          response.send(`Gate ini dibuka pukul ${openTime} dan ditutup ${closeTime}`)
 
+	          // response.send(`Gate ini dibuka pukul ${openTime} dan ditutup ${closeTime}`)
 	          var log={
 	      	    "id_gate_log":request.body.id_gate_log,
 	      			"nrp_log":username,
@@ -89,29 +87,29 @@ router.post('/auth', function(request, response) {
 	  	      	if (err) {
 	  	        	console.log("Error di insert log")
 	  	      	}})
+				response.redirect('/login');	        
 	        }
 				}
-      else {
-				response.send('Incorrect NRP and/or Password!');
-        var log={
-          "id_gate_log":request.body.id_gate_log,
-          "nrp_log":username,
-          "message": "Login gagal: NRP/Password salah",
-          "time": current
-        }
-				connection.query('INSERT INTO log SET ?', log, function(err, result) {
-	      	if (err) {
-	        	console.log("Error di insert log")
-	      	}})
-			response.redirect('/login');	
-			}
-			// response.end();
-		});
+	      else {
+					// response.send('Incorrect NRP and/or Password!');
+	        var log={
+	          "id_gate_log":request.body.id_gate_log,
+	          "nrp_log":username,
+	          "message": "Login gagal: NRP/Password salah",
+	          "time": current}
+					connection.query('INSERT INTO log SET ?', log, function(err, result) {
+		      	if (err) {
+		        	console.log("Error di insert log")
+		      	}})	
+				
+				response.redirect('/login');
+				}
+				// response.end();
+			});
 
-	} else {
+	}else {
 		// response.redirect('/users');	
 		response.send('Tolong masukkan NRP dan Password!');
-		// response.end();
 	}
 });
 
