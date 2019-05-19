@@ -31,7 +31,7 @@
  -->
 	<div class="table-responsive-xl">
 
-	<table class="table table-hover table-sm" >
+	<table class="table table-striped table-hover" >
 		<thead style="font-size:17px;">
 		  <tr class="thead-dark">
 		    <th scope="col-sm-6">NRP</th>

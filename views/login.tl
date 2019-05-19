@@ -219,11 +219,11 @@ input[type='submit'] {
   <div class="grid">
     <form action="/login/auth" method="post" class="form login">
       <header class="login__header">
-        <h2><span class="fa fa-sign-in" ></span> Pintu Utama (login)</h2>
+        <h2><span class="fa fa-sign-in" ></span> Pintu (login)</h2>
       </header>
       <div class="login__body">
         <div class="form__field">
-          <input type="text" name="username" placeholder="Username" required>
+          <input type="text" name="username" placeholder="NRP" required>
         </div>
         <div class="form__field">
           <input type="password" name="password" placeholder="Password" required>
@@ -238,7 +238,7 @@ input[type='submit'] {
       </div>
       <footer class="login__footer">
         <input type="submit" value="Login">
-        <p><span class="icon icon--info">?</span><a href="#">Forgot Password</a></p>
+        <!-- <p><span class="icon icon--info">?</span><a href="#">Forgot Password</a></p> -->
       </footer>
     </form>
   </div>

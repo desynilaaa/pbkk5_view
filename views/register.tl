@@ -241,7 +241,7 @@ input[type='submit'] {
       </div>
       <footer class="login__footer">
         <input type="submit" value="Login">
-        <p><span class="icon icon--info">?</span><a href="#">Do you have account?</a></p>
+        <p><span class="icon icon--info">?</span><a href="/login">Do you have account?</a></p>
       </footer>
     </form>
   </div>
