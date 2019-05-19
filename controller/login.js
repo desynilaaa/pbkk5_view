@@ -25,18 +25,17 @@ router.post('/auth', function(request, response) {
 			} else {
 				// response.send('Incorrect NRP and/or Password!');
 				connection.query('INSERT INTO log (id_gate_log, nrp_log, message, time) VALUES (?, ?, ?, ?)', ['1', username, 'Login user gagal', Date.now()], function(err, result) {
-	      		response.redirect('/')
+	      		response.redirect('/login')
 	      	if (err) {
 	        	console.log("Error di insert log")
 	      	}})
 			}
-
-			response.end();
+			// response.end();
 		});
 
 	} else {
 		response.send('Please enter NRP and Password!');
-		response.end();
+		// response.end();
 	}
 });
 
