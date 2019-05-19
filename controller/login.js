@@ -62,7 +62,7 @@ router.post('/auth', function(request, response) {
         request.session.loggedin = true;
         request.session.username = username;
 
-          if (current > openTime || current < closeTime){
+          if (current > openTime && current < closeTime){
             // response.send(`${username} berhasil Login! Selamat datang!`);
           var log={
             "id_gate_log":request.body.id_gate_log,
