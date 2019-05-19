@@ -70,7 +70,7 @@ router.post('/add', function(request, response) {
 	        console.log("Error di insert log")
 	      }})
 
-			// response.redirect('/users')
+			response.redirect('/users')
 	  }
 	})
 })
