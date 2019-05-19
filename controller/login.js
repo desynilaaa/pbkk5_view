@@ -15,19 +15,22 @@ router.post('/auth', function(request, response) {
 				request.session.loggedin = true;
 				request.session.username = username;
 				//response.send("login berhasil");
-				response.redirect('/users')
+
 				var time = new Date().getTime()
 				connection.query('INSERT INTO log (id_gate_log, nrp_log, message, time) VALUES (?, ?, ?, ?)', ['1', username, 'Login user berhasil', time], function(err, result) {
-	      	if (err) {
-	        	console.log("Error di insert log")
-	      	}})
+		      	if (err) {
+		        	console.log("Error di insert log")
+		      	}})
+				response.redirect('/users');				
 			} else {
-				response.send('Incorrect NRP and/or Password!');
+				// response.send('Incorrect NRP and/or Password!');
 				connection.query('INSERT INTO log (id_gate_log, nrp_log, message, time) VALUES (?, ?, ?, ?)', ['1', username, 'Login user gagal', Date.now()], function(err, result) {
+	      		response.redirect('/')
 	      	if (err) {
 	        	console.log("Error di insert log")
 	      	}})
 			}
+
 			response.end();
 		});
 
