@@ -14,7 +14,8 @@ router.post('/auth', function(request, response) {
 			if (results.length > 0) {
 				request.session.loggedin = true;
 				request.session.username = username;
-				response.send("login berhasil");
+				//response.send("login berhasil");
+				response.redirect('/users')
 				var time = new Date().getTime()
 				connection.query('INSERT INTO log (id_gate_log, nrp_log, message, time) VALUES (?, ?, ?, ?)', ['1', username, 'Login user berhasil', time], function(err, result) {
 	      	if (err) {
