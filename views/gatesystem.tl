@@ -234,11 +234,27 @@ input, textarea, legend {
 
 </style>
 
-
+<script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
 
 </head>
 
-<body>
+<body onload="startTime()">
 
 <!-- header -->
 <div class="wrapper" id="welcomepage">
@@ -252,6 +268,7 @@ input, textarea, legend {
 	<section class="welcomepage">
 		<div class="welcome">
 			<h1>Welcome</h1>
+      <h1 style="font-size: 2em" id="txt"></h1>
 		</div>
 	</section>
 <!-- nav -->
