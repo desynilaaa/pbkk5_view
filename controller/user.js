@@ -7,7 +7,7 @@ router.get('/', function(request, response) {
 	let query = db.query(sql, (err, results,fields) => {
 		if(err) throw err;
          response.render('users.tl',{
-            rows2 : results
+            rows : results
          });
 	});
 });

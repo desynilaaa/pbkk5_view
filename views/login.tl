@@ -228,6 +228,13 @@ input[type='submit'] {
         <div class="form__field">
           <input type="password" name="password" placeholder="Password" required>
         </div>
+
+        <div>
+      <select name="id_gate_log">
+        <option value="" disabled selected>Silahkan memilih GERBANG</option>
+        ${d.rows.reduce((str,row)=> str + '<option value= "'+ row.id_gate +'">'+ row.nama_gate +'</option>', '')}
+      </select>
+        </div>
       </div>
       <footer class="login__footer">
         <input type="submit" value="Login">
@@ -236,5 +243,4 @@ input[type='submit'] {
     </form>
   </div>
 </body>
-
 </html>
