@@ -27,7 +27,7 @@
     }
 	.table-title {
 		padding-bottom: 15px;
-		background: #435d7d;
+		background: #3D3D3D; 
 		color: #fff;
 		padding: 16px 30px;
 		margin: -20px -25px 10px;
@@ -329,9 +329,26 @@ $(document).ready(function(){
 					</div>
 					<div class="modal-body">
 						<div class="form-group">
-							<label>Name Gate</label>
+							<label  class="m-2">Name Gate</label>
 							<input type="text" name="name" class="form-control" required>
 						</div>
+						<div class="form-group">                    
+	                    	<label for="open" class="m-2">Time Open Gate :</label>
+	                    	<input type="time" id="open" name="open" min="1:00" max="24:00" required>
+	                	</div>
+	                	<div class="form-group">                    
+	                    	<label for="close" class="m-2">Time Close Gate :</label>
+	                    	<input type="time" id="close" name="close" min="1:00" max="24:00" required>
+	                	</div> 
+				        <div class="form__field">
+				            <!-- <label class="m-2">GERBANG</label> -->
+				            <select id="status" class="form-control" name="role" required>
+				                <option value="" disabled selected>Silahkan memilih ROLE</option>
+				                <option value="Mahasiswa">Mahasiswa</option>
+				                <option value="Dosen">Dosen</option>
+				            </select>
+				        </div> 
+
 
 					</div>
 					<div class="modal-footer">

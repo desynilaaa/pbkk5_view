@@ -9,7 +9,9 @@
  -->
 <style type="text/css">
   /* helpers/align.css */
-
+.form-group{margin-bottom:15px}
+.form-control{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.428571429;color:#555;vertical-align:middle;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);
+  }
 .align {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -94,7 +96,7 @@ fieldset {
   margin: 0;
 }
 
-input {
+input,option {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -229,11 +231,11 @@ input[type='submit'] {
           <input type="password" name="password" placeholder="Password" required>
         </div>
 
-        <div>
-      <select name="id_gate_log">
-        <option value="" disabled selected>Silahkan memilih GERBANG</option>
-        ${d.rows.reduce((str,row)=> str + '<option value= "'+ row.id_gate +'">'+ row.nama_gate +'</option>', '')}
-      </select>
+        <div class="form-group">
+          <select name="id_gate_log" class="form-control">
+            <option value="" disabled selected>Silahkan memilih GERBANG</option>
+            ${d.rows.reduce((str,row)=> str + '<option value= "'+ row.id_gate +'">'+ row.nama_gate +'</option>', '')}
+          </select>
         </div>
       </div>
       <footer class="login__footer">

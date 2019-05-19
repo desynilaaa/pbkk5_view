@@ -27,8 +27,8 @@
 .grid {
   margin-left: auto;
   margin-right: auto;
-  max-width: 24em;
-  width: 90%;
+  max-width: 27em;
+  width: 100%;
 }
 
 /* helpers/icon.css */
@@ -134,7 +134,7 @@ input[type='submit'] {
 
 .login__body {
   background-color: #f0f0f0;
-  padding: 1.5em;
+  padding: 2em 2em 3em 0.5em;
   position: relative;
 }
 

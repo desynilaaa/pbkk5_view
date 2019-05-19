@@ -77,7 +77,7 @@ body {
 /* nav */
 .navigation {
   width: 100%;
-  margin-top: -80px;
+  margin-top: -20px;
   padding: 1% 0;
   background-color: #3D3D3D;
   opacity: 0.8;
