@@ -141,6 +141,8 @@ router.post('/auth', function(request, response) {
                   if (err) {
                     console.log("Error di insert log")
                   }})
+                
+                console.log("Berhasil masuk")
                 response.redirect('/users');  
             }else {
               // response.send(errorMsg)
