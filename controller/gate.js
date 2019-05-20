@@ -21,7 +21,7 @@ router.get('/:id', function(request, response) {
 	let query = db.query(sql, (err, results, fields) => {
 		if (err) throw err;
 		// response.redirect({results}, url)
-		response.render('gate.tl', {
+		response.render('gatew.tl', {
 			rows2 : results
 		});
 	});
