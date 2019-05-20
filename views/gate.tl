@@ -30,8 +30,9 @@
                     <input type="time" id="G_CLOSE" name="close" min="1:00" max="24:00" required>
                 </div>
                 <div class="form-group"> 
-                    <label class="m-2">Role</label>
-                    <input type="text" class="form-control" placeholder="Role"  name="role">
+                    <!-- <label class="m-2">Role</label> -->
+                    <input type="radio" name="role" value="Mahasiswa" checked>Mahasiswa<br>
+                    <input type="radio" name="role" value="Dosen">Dosen<br>
                 </div>   
 
           

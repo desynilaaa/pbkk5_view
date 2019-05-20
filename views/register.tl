@@ -216,7 +216,7 @@ input[type='submit'] {
 
 <body class="align">
   <div class="grid">
-    <form action="/users" method="post" class="form login">
+    <form action="/register/add" method="post" class="form login">
       <header class="login__header">
         <h2><span class="fa fa-sign-in" ></span> Pintu Utama (register)</h2>
       </header>
@@ -240,7 +240,7 @@ input[type='submit'] {
         </div>
       </div>
       <footer class="login__footer">
-        <input type="submit" value="Login">
+        <input type="submit" value="Sign Up">
         <p><span class="icon icon--info">?</span><a href="/login">Do you have account?</a></p>
       </footer>
     </form>

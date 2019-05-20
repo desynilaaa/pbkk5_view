@@ -29,6 +29,7 @@
 		+ '<strong>'+ 'GATENAME : ' + row2.nama_gate +'</strong> <br>'
 		+ '<strong>'+ 'OPEN : ' + row2.open +'</strong> <br>'
 		+ '<strong>'+ 'CLOSE : ' + row2.close +'</strong> <br>'
+		+ '<strong>'+ 'CLOSE : ' + row2.role +'</strong> <br>'
 	, '')}						 
 				 	</p>
 
