@@ -29,20 +29,33 @@
 	<p>Already have an account? <a href="/login">Login</a></p>
 	<p>Or go <a href="/">home</a>.</p>
  -->
-	<div class="table-responsive-xl">
-
-	<table class="table table-striped table-hover" >
-		<thead style="font-size:17px;">
-		  <tr class="thead-dark">
-		    <th scope="col-sm-6">NRP</th>
-		    <th scope="col-sm-6">Username</th>
-		    <th scope="col-sm-6">Keterangan</th> 
-		  </tr>
- 		</thead>
- 		  <tbody style="font-size:15px;">
-		${d.rows2.reduce((str,row2)=> str + '  <tr> ' + '<td>' +row2.nrp +'</td>' + '<td>' +row2.nama +'</td>' + '<td> <a href="/users/'+ row2.id_user +'">info</a> </td>' +' </tr>', '')}		  
-		 </tbody>
-		</table>
+	<div class="table-wrapper">
+		<div>
+			<table class="table table-striped table-hover" >
+			<thead style="font-size:17px;">
+			  <tr class="thead-dark">
+			    <th scope="col-sm-6">NRP</th>
+			    <th scope="col-sm-6">Username</th>
+			    <th scope="col-sm-6">Keterangan</th> 
+			  </tr>
+	 		</thead>
+	 		  <tbody style="font-size:15px;">
+			${d.rows2.reduce((str,row2)=> str + '  <tr> ' + '<td>' +row2.nrp +'</td>' + '<td>' +row2.nama +'</td>' + '<td> <a href="/users/'+ row2.id_user +'">info</a> </td>' +' </tr>', '')}		  
+			 </tbody>
+			</table>
+			<!-- <div class="clearfix"> -->
+           <!--      <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div> -->
+                <!-- <ul class="pagination"> -->
+                    <!-- <li class="page-item disabled"><a href="#">Previous</a></li> -->
+                    <!-- <li class="page-item  active"><a href="#" class="page-link">1</a></li> -->
+       <!--              <li class="page-item"><a href="#" class="page-link">2</a></li>
+                    <li class="page-item"><a href="#" class="page-link">3</a></li>
+                    <li class="page-item"><a href="#" class="page-link">4</a></li>
+                    <li class="page-item"><a href="#" class="page-link">5</a></li> -->
+                    <!-- <li class="page-item"><a href="#" class="page-link">Next</a></li> -->
+                <!-- </ul> -->
+            <!-- </div> -->
+		</div>
 	</div>
 
 
