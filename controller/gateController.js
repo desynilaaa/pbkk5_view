@@ -33,13 +33,15 @@ exports.addGates= (req, res) => {
   global.close = req.body.close;
   global.role = req.body.role;
 
+  console.log(global.name);
+  console.log(global.open);
   Request.post({
-		url:     url+'/gates/add',
+		url:     url+'gates/add',
 		form:    { name: global.name, open : global.open, close : global.close, role : global.role}
 	  }, function(error, response, body){
-    		result = JSON.parse(body);
-    		console.dir(body);
-    		return res.redirect('/gates');
+    		// result = JSON.parse(body);
+    		// console.dir(body);
+    		res.redirect('/gates');
 	  });
 
 };
