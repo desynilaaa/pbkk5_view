@@ -7,7 +7,7 @@ var mysql = require('mysql');
 var connection = mysql.createConnection(dbconfig.connection);
 var bcrypt = require('bcrypt-nodejs');
 
-var url = " http://37b36698.ngrok.io/";
+var url = "http://715f9452.ngrok.io/";
 // var url = "http://71f56030.ngrok.io/";
 
 exports.addUsers= (req,res)=>{

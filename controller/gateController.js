@@ -7,7 +7,7 @@ var mysql = require('mysql');
 var connection = mysql.createConnection(dbconfig.connection);
 var bcrypt = require('bcrypt-nodejs');
 
-var url = " http://37b36698.ngrok.io/";
+var url = "http://715f9452.ngrok.io/";
 
 
 exports.getGates= (req,res)=>{
@@ -47,9 +47,28 @@ exports.addGates= (req, res) => {
 };
 
 exports.getIdGate= (req,res)=>{
+  var agate = req.params.g_id;
+  global.gate;
+  Request.get(url+"gates/"+agate, (error, response, body) => {
+      if(error) {
+          return console.dir(error);
+      }
+      console.dir(JSON.parse(body));
+      global.gate = JSON.parse(body);
+      gate = global.gate;
+      res.render('gatew',{
+        rows2:gate
+      });
+  });
 
 };
 
 exports.getDelGate=(req,res)=>{
-
+  var agate = req.params.g_id;
+  Request.delete(url+"gates/"+agate, (error, response, body) => {
+      if(error) {
+          return console.dir(error);
+      }
+      res.redirect('/gates');
+  });
 };
