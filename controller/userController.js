@@ -24,9 +24,7 @@ exports.getUsers= (req,res)=>{
                     global.rows = JSON.parse(body);
                     rows = global.rows;
             }
-            res.render('signup',{
-                rows2 : rows
-            });
+            res.render('register',{rows2 : rows});
     });
 };
 
