@@ -16,8 +16,9 @@ exports.index= (req,res)=>{
         // res.send("Ini halaman utama");
 };
 
-// exports.loginPage= (req,res)=>{
-// };
+exports.getRegister= (req,res)=>{
+        res.render('register.tl');
+};
 
 exports.doLogin= (req,res)=>{
 };

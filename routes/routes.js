@@ -25,7 +25,7 @@ module.exports = function(app) {
 	// auth-login
 	app.post('/login', controller.doLogin );
 	app.get('/login', controller.getLogin);
-
+	app.get('/register', controller.getRegister);
 	// Gate sudah
 	app.post('/gates', gatecontroller.addGates);
 	app.get('/gates', gatecontroller.getGates);
