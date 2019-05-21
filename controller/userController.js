@@ -35,5 +35,14 @@ exports.getUsers= (req,res)=>{
 
 
 
-    exports.getIdUser= (req,res)=>{
-    };
+exports.getIdUser= (req,res)=>{
+    // id_user = req.params.id_user;
+    // Request.get("http://715f9452.ngrok.io/users/"+id_user, (error, response, body) => {
+    // if(error) {
+    //     return console.log(error);
+    // }
+    // var data = JSON.parse(body);
+    // console.log(data['values'][0]);
+    // res.render('profile', { user: data['values'][0], path: "/indexuser"} );
+    // });
+};
