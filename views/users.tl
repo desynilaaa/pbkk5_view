@@ -23,7 +23,7 @@
 	<% } %> -->
 
 	<br>
-<!-- 
+<!--
 	<hr>
 
 	<p>Already have an account? <a href="/login">Login</a></p>
@@ -36,7 +36,7 @@
 			  <tr class="thead-dark">
 			    <th scope="col-sm-6">NRP</th>
 			    <th scope="col-sm-6">Username</th>
-			    <th scope="col-sm-6">Keterangan</th> 
+			    <th scope="col-sm-6">Keterangan</th>
 			  </tr>
 	 		</thead>
 	 		  <tbody style="font-size:15px;">
