@@ -70,4 +70,6 @@ exports.getIdUser= (req,res)=>{
         rows: nrp
       });
   });
+
+  
 };

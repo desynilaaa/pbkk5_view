@@ -240,11 +240,17 @@ input[type='submit'] {
         </div>
       </div>
       <footer class="login__footer">
-        <input type="submit" value="Sign Up">
+        <input onclick="myFunction()" type="submit" value="Sign Up">
         <p><span class="icon icon--info">?</span><a href="/login">Do you have account?</a></p>
       </footer>
     </form>
   </div>
 </body>
 
+<script>
+function myFunction() {
+  alert("Berhasil signup");
+}
+
+</script>
 </html>
