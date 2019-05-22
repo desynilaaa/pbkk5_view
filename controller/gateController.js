@@ -51,7 +51,7 @@ exports.addGates= (req, res) => {
 //           return console.dir(error);
 //       }
 //       res.redirect('/admin');
-//   });   
+//   });
 // }
 exports.getIdGate= (req,res)=>{
   var agate = req.params.g_id;
