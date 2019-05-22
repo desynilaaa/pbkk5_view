@@ -44,15 +44,7 @@ exports.addGates= (req, res) => {
 	  });
 
 };
-// exports.deleteuser = function(req, res){
-//   var user = req.params.id;
-//   Request.delete("http://10.151.33.4:3000/users/"+user, (error, response, body) => {
-//       if(error) {
-//           return console.dir(error);
-//       }
-//       res.redirect('/admin');
-//   });
-// }
+
 exports.getIdGate= (req,res)=>{
   var agate = req.params.g_id;
   global.gate;
@@ -71,7 +63,7 @@ exports.getIdGate= (req,res)=>{
 
 exports.getDelGate=(req,res)=>{
   var agate = req.params.g_id;
-  Request.delete(url+"gates/"+agate, (error, response, body) => {
+  Request.delete(url+"gates/delete/"+agate, (error, response, body) => {
       if(error) {
           return console.dir(error);
       }
