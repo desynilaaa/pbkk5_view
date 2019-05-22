@@ -24,13 +24,13 @@
 			<div class="well">
 				<h3><span class="fa fa-user"></span>GATE</h3>
 					<p>
-		${d.rows2.reduce((str,row2)=> str 
-		+ '<strong>'+ 'ID : ' + row2.id_gate +'</strong> <br>'
+		${d.rows2.reduce((str,row2)=> str
+		+ '<strong>'+ 'ID       : ' + row2.id_gate +'</strong> <br>'
 		+ '<strong>'+ 'GATENAME : ' + row2.nama_gate +'</strong> <br>'
-		+ '<strong>'+ 'OPEN : ' + row2.open +'</strong> <br>'
-		+ '<strong>'+ 'CLOSE : ' + row2.close +'</strong> <br>'
-		+ '<strong>'+ 'CLOSE : ' + row2.role +'</strong> <br>'
-	, '')}						 
+		+ '<strong>'+ 'OPEN     : ' + row2.open +'</strong> <br>'
+		+ '<strong>'+ 'CLOSE    : ' + row2.close +'</strong> <br>'
+		+ '<strong>'+ 'ROLE     : ' + row2.role +'</strong> <br>'
+	, '')}
 				 	</p>
 
 			</div>

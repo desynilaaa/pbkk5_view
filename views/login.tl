@@ -4,8 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Login</title>
+
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-<!--     <link rel="stylesheet" href="/css/coba.css"> 
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!--     <link rel="stylesheet" href="/css/coba.css">
  -->
 <style type="text/css">
   /* helpers/align.css */
@@ -213,35 +216,45 @@ input[type='submit'] {
 
 .form-control{display:block;width:100%;height:50px;padding:6px 12px;font-size:14px;margin:10px;line-height:1.428571429;color:#555;vertical-align:middle;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);-webkit-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s}
 
+
 </style>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 
 
 <body class="align">
   <div class="grid">
-    <form action="/login/auth" method="post" class="form login">
+    <form action="/login" method="post" class="form login">
       <header class="login__header">
         <h2><span class="fa fa-sign-in" ></span> Pintu (login)</h2>
       </header>
+      ${ d.message.length > 0? '<div  class="alert alert-danger alert-dismissible fade in"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>' + d.message + '</div>': ''}
       <div class="login__body">
         <div class="form__field">
-          <input type="text" name="username" placeholder="NRP" required>
+          <input class="form-control" type="text" name="nrp" placeholder="NRP" required>
         </div>
         <div class="form__field">
-          <input type="password" name="password" placeholder="Password" required>
+          <input class="form-control" type="password" name="password" placeholder="Password" required>
         </div>
 
         <div class="form-group">
-          <select name="id_gate_log" class="form-control">
+          <select name="id_gate" class="form-control text-center">
             <option value="" disabled selected>Silahkan memilih GERBANG</option>
             ${d.rows.reduce((str,row)=> str + '<option value= "'+ row.id_gate +'">'+ row.nama_gate +'</option>', '')}
           </select>
         </div>
+
+        <div class="text-center">
+        <!-- <input type="submit" value="Login"> -->
+        <button class="btn btn-secondary btn-lg " type="submit">Login</button>
+        </div>
       </div>
-      <footer class="login__footer">
-        <input type="submit" value="Login">
+      <!-- <footer class="login__footer"> -->
+
         <!-- <p><span class="icon icon--info">?</span><a href="#">Forgot Password</a></p> -->
-      </footer>
+      <!-- </footer> -->
     </form>
   </div>
 </body>
