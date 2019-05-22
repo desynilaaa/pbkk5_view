@@ -44,6 +44,13 @@ exports.getUsers= (req,res)=>{
 };
 
     exports.getDelUser = (req,res)=>{
+      var id = req.params.id;
+      Request.delete(url+"users/delete/"+id, (error, response, body) => {
+          if(error) {
+              return console.dir(error);
+          }
+          res.redirect('/users');
+      });
 
     };
 

@@ -28,12 +28,12 @@
 	${d.rows.reduce((str,row)=> str + '<strong>'+ 'NRP &emsp;&emsp;&emsp;&nbsp;: ' + row.nrp +'</strong> <br>'
 		+ '<strong>'+ 'Username &nbsp;&nbsp;: ' + row.nama +'</strong> <br>'
 		+ '<strong>'+ 'Role &emsp;&emsp;&emsp;&nbsp;: ' + row.role +'</strong> <br>'
-	, '')}						 
+	, '')}
 				 	</p>
 
 			</div>
 			<!-- href="/users/'+ row.ID +'" -->
-			${d.rows.reduce((str,row)=>str+ '<form action="delete/'+ row.id_user +'?_method=DELETE" method="POST"><div class="text-center"><button class="btn btn-secondary btn-lg " type="submit">delete user</button></div></form>' , '')}
+			${d.rows.reduce((str,row)=>str+ '<form action="/users/'+ row.id_user +'?_method=DELETE" method="POST"><div class="text-center"><button class="btn btn-secondary btn-lg " type="submit">delete user</button></div></form>' , '')}
 		</div>
 
 	</div>
